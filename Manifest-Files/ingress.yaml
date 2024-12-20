@@ -30,6 +30,6 @@ spec:
         pathType: Prefix
         backend:
           service:
-            name: fss
+            name: fss-web-service
             port:
               number: 81
