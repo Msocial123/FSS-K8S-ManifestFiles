@@ -52,3 +52,5 @@ spec:
       - name: mongodb-storage
         persistentVolumeClaim:
           claimName: mongodb-pvc
+# Install CSI Drive 
+# kubectl apply -k "github.com/kubernetes-sigs/aws-ebs-csi-driver/deploy/kubernetes/overlays/stable/ecr/?ref=release-1.31"
