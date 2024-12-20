@@ -1,13 +1,13 @@
 apiVersion: v1
 kind: PersistentVolume
 metadata:
-  name: mongodb-pv1
+  name: mongodb-pv
 spec:
   capacity:
-    storage: 10Gi  # Define the size of the volume
+    storage: 30Gi  # Define the size of the volume
   accessModes:
     - ReadWriteOnce
   persistentVolumeReclaimPolicy: Retain
   csi:
     driver: ebs.csi.aws.com
-    volumeHandle: vol-01f2fa058de2f93ef
+    volumeHandle: vol-0490d0e66c64a1170
