@@ -1,0 +1,40 @@
+apiVersion: apps/v1 
+kind: Deployment
+metadata:
+  name: web-deployment 
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: fss1
+  template:
+    metadata:
+      labels:
+        app: fss1
+    spec:
+      containers:
+      - name: fss-web1
+        image: muralisocial123/oracle-web-app:latest
+        resources:
+          limits:
+            memory: "128Mi"
+            cpu: "200m"
+          requests:
+            memory: "100Mi" 
+            cpu: "100m"
+        ports:
+        - containerPort: 80
+--- 
+apiVersion: v1 
+kind: Service
+metadata:
+  name: web-service
+spec:
+  selector:
+    app: fss1
+  ports:
+  - port: 82
+    targetPort: 80
+    protocol: TCP 
+  type: NodePort   
+        
